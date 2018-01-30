@@ -26,7 +26,7 @@ function allterco_civicrm_install() {
   $params  = 
     array('option_group_id' => $groupID,
           'label' => 'Allterco',
-          'value' => 'org.civicrm.sms.allterco',
+          'value' => 'org.catalystbalkans.sms.allterco',
           'name'  => 'allterco',
           'is_default' => 1,
           'is_active'  => 1,
@@ -45,7 +45,7 @@ function allterco_civicrm_uninstall() {
   if ($optionID)
     CRM_Core_BAO_OptionValue::del($optionID); 
   
-  $filter    =  array('name'  => 'org.civicrm.sms.allterco');
+  $filter    =  array('name'  => 'org.catalystbalkans.sms.allterco');
   $Providers =  CRM_SMS_BAO_Provider::getProviders(False, $filter, False);
   if ($Providers){
     foreach($Providers as $key => $value){
@@ -63,7 +63,7 @@ function allterco_civicrm_enable() {
   if ($optionID)
     CRM_Core_BAO_OptionValue::setIsActive($optionID, TRUE); 
   
-  $filter    =  array('name' => 'org.civicrm.sms.allterco');
+  $filter    =  array('name' => 'org.catalystbalkans.sms.allterco');
   $Providers =  CRM_SMS_BAO_Provider::getProviders(False, $filter, False);
   if ($Providers){
     foreach($Providers as $key => $value){
@@ -81,7 +81,7 @@ function allterco_civicrm_disable() {
   if ($optionID)
     CRM_Core_BAO_OptionValue::setIsActive($optionID, FALSE);
   
-  $filter    =  array('name' =>  'org.civicrm.sms.allterco');
+  $filter    =  array('name' =>  'org.catalystbalkans.sms.allterco');
   $Providers =  CRM_SMS_BAO_Provider::getProviders(False, $filter, False);
   if ($Providers){
     foreach($Providers as $key => $value){

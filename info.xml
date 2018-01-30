@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<extension key="org.civicrm.sms.allterco" type="module">
-  <downloadUrl>https://github.com/veda-consulting/org.civicrm.sms.clickatell/archive/2.0.zip</downloadUrl>
+<extension key="org.catalystbalkans.sms.allterco" type="module">
+  <downloadUrl>https://github.com/catalystbalkans/org.catalystbalkans.sms.allterco/archive/1.0.zip</downloadUrl>
   <file>allterco</file>
   <name>allterco</name>
   <description>Allterco integration allows delivering short message service (SMS) messages through its Allterco Gateway to mobile phone users.</description>

@@ -147,7 +147,7 @@ function _allterco_civix_civicrm_managed(&$entities) {
     $es = include $file;
     foreach ($es as $e) {
       if (empty($e['module'])) {
-        $e['module'] = 'org.civicrm.sms.allterco';
+        $e['module'] = 'org.catalystbalkans.sms.allterco';
       }
       $entities[] = $e;
     }
