@@ -159,9 +159,13 @@ class org_catalystbalkans_sms_allterco extends CRM_SMS_Provider
      */
     static function &singleton($providerParams = array(), $force = FALSE)
     {
-	$providerID = CRM_Utils_Array::value('provider_id', $providerParams); //returns null since providerID is not defined in query string
-       $providerID = CRM_SMS_BAO_Provider::getProviderInfo($providerID,'id');
-        //$providerName = CRM_SMS_BAO_Provider::getProviderInfo($providerID);
+	if(isset($providerParams['provider'])){
+            $providers = CRM_SMS_BAO_Provider::getProviders(NULL, array('name' => $providerParams['provider']));
+            $providerID = current($providers)['id'];
+        }
+        else{
+            $providerID = CRM_Utils_Array::value('provider_id', $providerParams);
+        }
 
         $skipAuth = TRUE; //$providerID ? FALSE : TRUE; hack to skip authorization
         $cacheKey = (int)$providerID;
